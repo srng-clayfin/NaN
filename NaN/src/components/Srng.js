@@ -12,7 +12,7 @@ const Srng = () =>
         {
             if(ele.id === j)
             {
-                ele.No = ele.No+1
+                ele.No = ele.No+1;
                 setFlag(!flag);
                 return;               
             }
@@ -35,15 +35,15 @@ const Srng = () =>
     return (    
         <ScrollView>
             <View>
-            {arr.map((ele,k) =>
-                <View style={styles.parent}  key={k}>            
-                    <Button onPress={() => handleminus(ele.id)} title="       -       "/>            
-                        <Text style={styles.child}>
-                            {ele.No}
-                        </Text>
-                    <Button onPress={() => handleplus(ele.id)} title="       +       " />   
-                </View>     
-            )}      
+                {arr.map((ele,k) =>
+                    <View style={styles.parent}  key={k}>            
+                        <Button onPress={() => handleminus(ele.id)} title="       -       "/>            
+                            <Text style={styles.child}>
+                                {ele.No}
+                            </Text>
+                        <Button onPress={() => handleplus(ele.id)} title="       +       " />   
+                    </View>     
+                )}      
             </View>
         </ScrollView>    
   )
