@@ -8,7 +8,6 @@ const Srng = () =>
     const [list,setList] = useState(arr);
     const [obj,setObj] = useState({});
 
-
     const handleplus = (j) =>
     {
         list.forEach((ele) =>
