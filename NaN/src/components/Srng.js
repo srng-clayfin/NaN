@@ -1,16 +1,14 @@
-import { StyleSheet, Text, View, Button, ScrollView } from 'react-native'
-import React, { useState } from 'react'
-import { arr } from './data'
+import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { arr } from './data';
 
 const Srng = () => 
 {   
-    const [flag,setFlag]  = useState(false);
-    const [list,setList] = useState(arr);
-    const [obj,setObj] = useState({});
-
+    const [flag,setFlag]  = useState(false);    
+    
     const handleplus = (j) =>
     {
-        list.forEach((ele) =>
+        arr.forEach((ele) =>
         {
             if(ele.id === j)
             {
@@ -19,12 +17,11 @@ const Srng = () =>
                 return;               
             }
         }) 
-        // console.log(list);
     }
 
     const handleminus = (j) =>
     {
-        list.forEach((ele) =>
+        arr.forEach((ele) =>
         {
             if(ele.id === j)
             {
@@ -38,11 +35,13 @@ const Srng = () =>
     return (    
         <ScrollView>
             <View>
-            {list.map((e,k) =>
+            {arr.map((ele,k) =>
                 <View style={styles.parent}  key={k}>            
-                    <Button onPress={() => handleminus(e.id)} title="       -       "/>            
-                    <Text style={styles.child}>{e.No}</Text>            
-                    <Button onPress={() => handleplus(e.id)} title="       +       " />   
+                    <Button onPress={() => handleminus(ele.id)} title="       -       "/>            
+                        <Text style={styles.child}>
+                            {ele.No}
+                        </Text>
+                    <Button onPress={() => handleplus(ele.id)} title="       +       " />   
                 </View>     
             )}      
             </View>
@@ -72,6 +71,5 @@ const styles = StyleSheet.create({
     {
         width: 20,
         height: 20,
-        
     }
 })
